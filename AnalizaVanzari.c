@@ -16,16 +16,15 @@ typedef struct {
     float venit;
 } Tranzactie;
 
-// Funcție să extragem luna din data (YYYY-MM-DD sau DD/MM/YYYY)
+// Funcție să extragem luna din data 
 int get_luna(const char* data) {
-    // Formatul e YYYY-MM-DD în fișier
+    
     if (strlen(data) < 10) return 0;
     
-    // Pentru format YYYY-MM-DD (ex: 2001-02-10)
     if (data[4] == '-') {
         return (data[5] - '0') * 10 + (data[6] - '0');
     }
-    // Pentru format DD/MM/YYYY (ex: 01/02/2001)
+
     else if (data[2] == '/') {
         return (data[3] - '0') * 10 + (data[4] - '0');
     }
